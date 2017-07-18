@@ -10,25 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718100017) do
+ActiveRecord::Schema.define(version: 20170718124245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.bigint "pose_id"
+    t.bigint "user_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pose_id"], name: "index_comments_on_pose_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "poses", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "category_id"
     t.string "name"
     t.string "sanskrit_name"
     t.string "image"
-    t.string "description"
+    t.text "description"
     t.integer "difficulty_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_poses_on_category_id"
     t.index ["user_id"], name: "index_poses_on_user_id"
   end
 

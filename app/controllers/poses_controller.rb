@@ -30,6 +30,7 @@ class PosesController < ApplicationController
 
 	def destroy
 		@pose = Pose.find(params[:id])
+		@pose.user_id = current_user.id
 		@pose.destroy
 		redirect_to poses_path
 	end

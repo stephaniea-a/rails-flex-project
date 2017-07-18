@@ -15,6 +15,12 @@ user1 = User.create!({
 
 	})
 
+category1 = Category.create!({
+
+	category: "This is a Category",
+	
+	})
+
 
 pose1 = Pose.create!({
 
@@ -23,7 +29,8 @@ pose1 = Pose.create!({
 	description: "A cat like pose",
 	image: "image URL",
 	difficulty_level: 2,
-	user_id: user1.id
+	user_id: user1.id,
+	category_id: category1.id
 
 	})
 
@@ -34,9 +41,22 @@ pose2 = Pose.create!({
 	description: "A cobra like pose",
 	image: "image URL",
 	difficulty_level: 3,
-	user_id: user1.id
+	user_id: user1.id,
+	category_id: category1.id
 
 	})
+
+
+comment1 = Comment.create!({
+
+	comment: "this is a comment",
+	user_id: user1.id,
+	pose_id: pose1.id
+
+	})
+
+
+
 
 
 
