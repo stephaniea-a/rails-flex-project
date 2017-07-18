@@ -24,8 +24,7 @@ pose1 = Pose.create!({
 	description: "A cat like pose",
 	image: "image URL",
 	difficulty_level: 2
-	
-	
+
 
 	})
 
@@ -36,16 +35,21 @@ pose2 = Pose.create!({
 	description: "A cobra like pose",
 	image: "image URL",
 	difficulty_level: 3
-	
-	
 
 	})
 
 UserPose.create!({
 
 	user_id: user1.id,
-	pose_id: pose1.id,
-	comment: "This is a comment"
+	pose_id: pose1.id
+
+	})
+
+comment1 = Comment.create!({
+
+	name: "Steph",
+	comment: "This is a new comment",
+	pose_id: pose1.id
 
 	})
 
