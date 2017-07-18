@@ -1,1 +1,10 @@
-<h1>Index of Poses</h1>
+<h1>Yoga Poses</h1>
+
+<% @poses.each do |pose| %>
+	<h2><%= pose.name %></h2>
+	<p><%= pose.sanskrit_name %></p>
+	<img src="<%= pose.image %>">
+	<p>Description <%= pose.description %></p>
+	<p>Difficulty Level <%= pose.difficulty_level %></p>
+
+<% end %>

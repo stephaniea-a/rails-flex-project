@@ -19,6 +19,7 @@ user1 = User.create!({
 pose1 = Pose.create!({
 
 	name: "Cat Pose",
+	sanskrit_name: "sname",
 	description: "A cat like pose",
 	image: "image URL",
 	difficulty_level: 2,
@@ -29,12 +30,16 @@ pose1 = Pose.create!({
 pose2 = Pose.create!({
 
 	name: "Cobra Pose",
+	sanskrit_name: "sname",
 	description: "A cobra like pose",
 	image: "image URL",
 	difficulty_level: 3,
 	user_id: user1.id
 
 	})
+
+
+
 
 # user1.save
 # pose1.save
