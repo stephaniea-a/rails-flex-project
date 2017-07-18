@@ -14,7 +14,6 @@ class PosesController < ApplicationController
 
 	def create
 		@pose = Pose.create(pose_params)
-		@pose.user_id = current_user.id
 		@pose.save
 		redirect_to @pose
 	end

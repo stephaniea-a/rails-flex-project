@@ -42,8 +42,10 @@ pose2 = Pose.create!({
 	})
 
 UserPose.create!({
+
 	user_id: user1.id,
-	pose_id: pose1.id
+	pose_id: pose1.id,
+	comment: "This is a comment"
 
 	})
 
