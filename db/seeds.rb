@@ -15,11 +15,6 @@ user1 = User.create!({
 
 	})
 
-category1 = Category.create!({
-
-	category: "This is a Category",
-	
-	})
 
 
 pose1 = Pose.create!({

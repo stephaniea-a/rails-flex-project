@@ -14,6 +14,7 @@ class PosesController < ApplicationController
 
 	def create
 		@pose = Pose.create(pose_params)
+		@pose.user_id = current_user.id
 		@pose.save
 		redirect_to @pose
 	end
@@ -30,7 +31,6 @@ class PosesController < ApplicationController
 
 	def destroy
 		@pose = Pose.find(params[:id])
-		@pose.user_id = current_user.id
 		@pose.destroy
 		redirect_to poses_path
 	end
