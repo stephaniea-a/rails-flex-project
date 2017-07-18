@@ -23,9 +23,9 @@ pose1 = Pose.create!({
 	sanskrit_name: "sname",
 	description: "A cat like pose",
 	image: "image URL",
-	difficulty_level: 2,
-	user_id: user1.id,
-	category_id: category1.id
+	difficulty_level: 2
+	
+	
 
 	})
 
@@ -35,16 +35,13 @@ pose2 = Pose.create!({
 	sanskrit_name: "sname",
 	description: "A cobra like pose",
 	image: "image URL",
-	difficulty_level: 3,
-	user_id: user1.id,
-	category_id: category1.id
+	difficulty_level: 3
+	
+	
 
 	})
 
-
-comment1 = Comment.create!({
-
-	comment: "this is a comment",
+UserPose.create!({
 	user_id: user1.id,
 	pose_id: pose1.id
 
@@ -56,5 +53,3 @@ comment1 = Comment.create!({
 
 
 
-# user1.save
-# pose1.save

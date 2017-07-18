@@ -1,7 +1,7 @@
 class Pose < ApplicationRecord
 
-	belongs_to :user
-	has_many :comments
+	has_many :user_pose
+	has_many :users, through: :user_pose
 
 	
 end

@@ -1,0 +1,2 @@
+class UserPoseController < ApplicationController
+end
