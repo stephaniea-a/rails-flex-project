@@ -27,7 +27,7 @@
 
 		<div class="field">
 			<%= form.label :'difficulty_level:' %>
-			<%= form.number_field :difficulty_level, id: :pose_image %>	
+			<%= form.select :'difficulty_level', options_for_select(["Easy", "Medium", "Difficult"]), :class => 'genForm_dropBox' %>
 		</div>
 
 		<div class="field">

@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
-	# before_action :find_pose
 
 	def index
 		@comment = Comment.all
 	end
 	
 	def show
+		@comment = Comment.find(params[:id])
 	end
 
 	def new
@@ -25,12 +25,15 @@ class CommentsController < ApplicationController
 	end
 
 	def update
+		@comment = Comment.find(params[:id])
+		@comment.update(comment_params)
+		redirect_to pose_path(@comment.pose)
 	end
 
 	def destroy
 		@comment = Comment.find(params[:id])
 		@comment.destroy
-
+		redirect_to pose_path(@comment.pose)
 		
 	end
 

@@ -5,7 +5,7 @@ class CreatePoses < ActiveRecord::Migration[5.1]
       t.string :sanskrit_name
       t.string :image
       t.text :description
-      t.integer :difficulty_level
+      t.string :difficulty_level
       t.timestamps
     end
 

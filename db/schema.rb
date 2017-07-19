@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20170719104217) do
     t.string "sanskrit_name"
     t.string "image"
     t.text "description"
-    t.integer "difficulty_level"
+    t.string "difficulty_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
