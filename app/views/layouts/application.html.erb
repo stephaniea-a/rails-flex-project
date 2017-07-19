@@ -11,6 +11,12 @@
   <body>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <nav>
+      <li><%= link_to 'New', new_pose_path %></li>
+      <li><%= link_to 'Index', poses_path %></li>
+    </nav>
+
     <%= yield %>
   </body>
 </html>

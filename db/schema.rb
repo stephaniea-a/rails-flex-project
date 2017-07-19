@@ -16,11 +16,14 @@ ActiveRecord::Schema.define(version: 20170718152712) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "pose_id"
     t.string "name"
     t.text "comment"
-    t.string "pose_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pose_id"], name: "index_comments_on_pose_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "poses", force: :cascade do |t|
