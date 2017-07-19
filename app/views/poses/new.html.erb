@@ -27,7 +27,8 @@
 
 		<div class="field">
 			<%= form.label :'difficulty_level:' %>
-			<%= form.select :'difficulty_level', options_for_select(["Easy", "Medium", "Difficult"]), :class => 'genForm_dropBox' %>
+			
+			<%= form.select(:'difficulty_level', options_for_select(["Easy", "Medium", "Difficult"], :selected => form.object.difficulty_level), :include_blank => true) %>
 		</div>
 
 		<div class="field">
