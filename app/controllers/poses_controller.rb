@@ -6,6 +6,7 @@ class PosesController < ApplicationController
 	
 	def new
 		@pose = Pose.new
+		@categories = Category.all.map{|c| [c.category, c.id]}
 	end
 
 	def show
@@ -14,6 +15,7 @@ class PosesController < ApplicationController
 
 	def create
 		@pose = Pose.create(pose_params)
+		@pose.category_id = params[:category_id]
 		@pose.save
 		redirect_to @pose
 	end
@@ -36,7 +38,7 @@ class PosesController < ApplicationController
 
 	private 
 		def pose_params
-			params.require(:pose).permit(:name, :sanskrit_name, :image, :description, :difficulty_level)
+			params.require(:pose).permit(:name, :sanskrit_name, :image, :description, :difficulty_level, :category_id)
 		end
 
 end

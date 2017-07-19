@@ -7,10 +7,13 @@
 <p>Difficulty Level <%= @pose.difficulty_level %></p>
 
 <% @pose.comments.each do |comment| %>
-	<p><%= comment.name %></p>
-	<p><%= comment.comment %></p>
-                
+	<div>
+		<p><%= comment.name %></p>
+		<p><%= comment.comment %></p>
+	</div>
+    <%= link_to 'Destroy', @comment, method: :delete %> 
 <% end %>
+
 
 
 <%= link_to 'Edit', edit_pose_path(@pose) %> |
