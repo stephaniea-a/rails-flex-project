@@ -15,19 +15,14 @@ user1 = User.create!({
 
 	})
 
-category1 = Category.create!({
-
-	category: "Legs"
-	})
 
 pose1 = Pose.create!({
 
 	name: "Cat Pose",
 	sanskrit_name: "Marjaryasana",
 	description: "This pose provides a gentle massage to the spine and belly organs.",
-	image: "https://www.yogajournal.com/.image/c_limit%2Ccs_srgb%2Cq_60%2Cw_1920/MTQ3MTc0NjYxMzIxNDAxODA2/2hp_286_0574_bjk.jpg",
-	difficulty_level: "Easy",
-	category_id: category1.id
+	image: File.new("#{Rails.root}/app/assets/images/seed1.jpg"),
+	difficulty_level: "Easy"
 
 	})
 
@@ -36,9 +31,8 @@ pose2 = Pose.create!({
 	name: "Cobra Pose",
 	sanskrit_name: "Bhujangasana",
 	description: "Open the heart and roll the shoulders down to promote flexibility in Cobra Pose.",
-	image: "https://www.yogajournal.com/.image/c_limit%2Ccs_srgb%2Cq_60%2Cw_1920/MTQ3MTU3MjczOTUxNjEwMzE4/3yp_287_6710_gn_bjk.jpg",
-	difficulty_level: "Medium",
-	category_id: category1.id
+	image: File.new("#{Rails.root}/app/assets/images/seed2.jpg"),
+	difficulty_level: "Medium"
 
 	})
 

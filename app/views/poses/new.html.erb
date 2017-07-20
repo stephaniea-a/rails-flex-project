@@ -3,37 +3,34 @@
 <form role="form">
   
 	<%= form_with(model: @pose) do |form| %>
-			
-			<%= form.label :'category:' %>
-			<%= form.select :category_id, options_for_select(@categories)%>
 
 			<div class="form-group">
 				<%= form.label :'name:' %>
 				<%= form.text_field :name, id: :pose_name %>	
 			</div>
 
-			<div class="field">
+			<div class="form-group">
 				<%= form.label :'sanskrit_name:' %>
 				<%= form.text_field :sanskrit_name, id: :pose_sanskrit_name %>	
 			</div>
 
-			<div class="field">
+			<div class="form-group">
 				<%= form.label :'image:' %>
 				<%= form.file_field :image, id: :pose_image %>	
 			</div>
 
-			<div class="field">
+			<div class="form-group">
 				<%= form.label :'description:' %>
 				<%= form.text_area :description, id: :pose_image %>	
 			</div>
 
-			<div class="field">
+			<div class="form-group">
 				<%= form.label :'difficulty_level:' %>
 				
 				<%= form.select(:'difficulty_level', options_for_select(["Easy", "Medium", "Difficult"], :selected => form.object.difficulty_level), :include_blank => true) %>
 			</div>
 
-			<div class="field">
+			<div class="form-group">
 				<%=form.submit %>
 			</div>
 

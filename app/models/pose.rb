@@ -5,8 +5,6 @@ class Pose < ApplicationRecord
 
 	has_many :comments
 
-	belongs_to :category
-
 	validates :image, presence: true
 
   	has_attached_file :image, styles: { :medium => "640x" }
