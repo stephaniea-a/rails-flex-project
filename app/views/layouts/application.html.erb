@@ -9,8 +9,6 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -24,6 +22,9 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-top">
+          <ul class="nav navbar-nav navbar-left">
+            <li>LOGO</li>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li><%= link_to 'Add a New Pose', new_pose_path %></li>
@@ -39,11 +40,12 @@
       </div>
     </nav>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <div id="main-container" class="container">
         <div class="row">
-          <div class=".col-md-4">
-            <h3>PostFlex</h3>
-          </div>
+            <h3>Flex</h3>
           <div class=".col-md-4">
             <%= yield %>
           </div>

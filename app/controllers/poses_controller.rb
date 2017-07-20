@@ -1,4 +1,5 @@
 class PosesController < ApplicationController
+	before_action :set_upload, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@poses = Pose.all
@@ -35,6 +36,9 @@ class PosesController < ApplicationController
 	end
 
 	private 
+		def set_upload
+	      @pose = Pose.find(params[:id])
+	    end
 		def pose_params
 			params.require(:pose).permit(:name, :sanskrit_name, :image, :description, :difficulty_level)
 		end
