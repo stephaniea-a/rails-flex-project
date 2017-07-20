@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PostFlex</title>
+    <title>Flex</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,15 +12,34 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-top">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-top">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to 'Add a New Pose', new_pose_path %></li>
+              <li><%= link_to 'See all Poses', poses_path %></li>
+              <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
+            <% else %>
+              <li><%= link_to 'Sign up', new_user_registration_path %></li>
+              <li><%= link_to 'Sign in', user_session_path %></li>
+
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <div id="main-container" class="container">
-      <div class="row">
-        <nav>
-          <li><%= link_to 'New', new_pose_path %></li>
-          <li><%= link_to 'Index', poses_path %></li>
-        </nav>
-      </div>
         <div class="row">
           <div class=".col-md-4">
             <h3>PostFlex</h3>

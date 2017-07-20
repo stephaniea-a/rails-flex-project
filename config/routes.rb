@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # root to: "poses#index"
   resources :poses
   resources :comments
+
  
  
 end
