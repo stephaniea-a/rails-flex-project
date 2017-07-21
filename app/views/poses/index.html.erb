@@ -1,17 +1,22 @@
 <h1>Yoga Poses</h1>
-
+<p>Welcome to Flex. The online platform to share yoga poses and information. Yoga is for all ages, levels and genders and is extremely beneficial for the mind, body and soul.</p>
 <div class="row">
 
 	<% @poses.each do |pose| %>
 		<div class="col-md-4">
-			<h2><%= pose.name %></h2>
-			<p><%= pose.sanskrit_name %></p>
-			<img src="<%= pose.image %>">
-			<p>Description <%= pose.description %></p>
-			<p>Difficulty Level <%= pose.difficulty_level %></p>
-			<td><%= link_to 'Show', pose %></td>
-		    <td><%= link_to 'Edit', edit_pose_path(pose) %></td>
-		    <td><%= link_to 'Destroy', pose, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<div class="pose-tile">
+				<h2><%= link_to pose.name, pose %></h2>
+				<p><%= pose.sanskrit_name %></p>
+				<img src="<%= pose.image.thumb %>">
+				<p><%= pose.description %></p>
+				<p><strong>Difficulty Level:</strong> <%= pose.difficulty_level %></p>
+				<div class="btn btn-default">
+					<td><%= link_to 'View', pose %></td> 
+				</div>
+				<div class="btn btn-default">
+				    <td><%= link_to 'Edit', edit_pose_path(pose) %></td>
+			    </div>
+		    </div>
 		</div>
 
 	<% end %>

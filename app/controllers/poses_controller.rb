@@ -16,7 +16,7 @@ class PosesController < ApplicationController
 	def create
 		@pose = Pose.create(pose_params)
 		@pose.save
-		redirect_to @pose
+		redirect_to poses_path
 	end
 
 	def edit 
@@ -26,7 +26,7 @@ class PosesController < ApplicationController
 	def update
 		@pose = Pose.find(params[:id])
 		@pose.update(pose_params)
-		redirect_to @pose
+		redirect_to poses_path
 	end
 
 	def destroy
