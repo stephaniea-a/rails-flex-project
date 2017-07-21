@@ -11,7 +11,7 @@ user1 = User.create!({
 	email: "stephanie@yahoo.com",
 	password: "password",
 	encrypted_password: 'password',
-	sign_in_count: 0,
+	is_admin: true
 
 	})
 

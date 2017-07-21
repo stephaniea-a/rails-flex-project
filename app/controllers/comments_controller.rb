@@ -22,6 +22,9 @@ class CommentsController < ApplicationController
 
 	def edit
 		@comment = Comment.find(params[:id])
+		if current_user.id != @comment.user_id
+			redirect_to pose_path(@comment.pose)
+		end
 	end
 
 	def update
