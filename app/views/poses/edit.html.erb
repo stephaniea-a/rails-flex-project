@@ -4,14 +4,14 @@
 	<%= form_for @pose,:html => {:class => "form-horizontal center"} do |form| %>
 
 		<div class="form-group">
-			<%= form.label :'name:', class: "col-sm-10" %>
+			<%= form.label :'name of pose:', class: "col-sm-10" %>
 			<div class="col-sm-10">
 				<%= form.text_field :name, id: :pose_name, class: "col-md-4 form-control" %>
 			</div>	
 		</div>
 
 		<div class="form-group">
-			<%= form.label :'sanskrit_name:', class: "col-sm-10" %>
+			<%= form.label :'sanskrit_name(optional):', class: "col-sm-10" %>
 			<div class="col-sm-10">
 				<%= form.text_field :sanskrit_name, id: :pose_sanskrit_name, class: "col-md-4 form-control" %>	
 			</div>
@@ -20,7 +20,7 @@
 		<div class="form-group">
 			<%= form.label :image , class: "col-sm-10"%>
 			<div class="col-sm-10">
-				<%= form.file_field :image %>
+				<%= form.file_field :image, accept: 'image/jpeg, image/png, image/gif' %>
 			</div>
 		</div>
 

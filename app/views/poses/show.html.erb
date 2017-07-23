@@ -16,16 +16,18 @@
 <p><%= @pose.description %></p>
 <p><strong>Difficulty Level: </strong> <%= @pose.difficulty_level %></p>
 
+<p> <%= @pose.comments.length %> Comments</p> 
 <% @pose.comments.each do |comment| %>
-	<div class="form-group">
-		<div class="form-control">
-			<p><%= comment.name %>: <em><%= comment.comment %></em></p>
-		</div>
-		<% if current_user.id == comment.user_id %>
-			<%= link_to 'Edit Comment', edit_comment_path(comment) %> |
-			<%= link_to 'Delete comment', comment_path(comment), method: :delete %>
-		<% end %>
+	<div class="comment">
+		<p><strong><%= comment.name %></strong>: <em><%= comment.comment %></em></p>
 	</div>
+	<% if current_user.id == comment.user_id %>
+		<%= link_to 'Edit Comment', edit_comment_path(comment) %> |
+		<%= link_to 'Delete comment', comment_path(comment), method: :delete %>
+		<br>
+	<% end %>
+	<br>
+	
 <% end %>
 
 

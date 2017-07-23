@@ -23,5 +23,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :square do
     process :resize_to_fill => [500, 500]
   end
+
+  def default_url(*args)
+    ActionController::Base.helpers.asset_path([thumb, "placeholder.png"].compact.join('_'))
+  end
  
 end
