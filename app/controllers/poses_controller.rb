@@ -15,6 +15,9 @@ class PosesController < ApplicationController
 
 	def create
 		@pose = Pose.create(pose_params)
+		# byebug
+		@pose.users.push(current_user)
+		# @pose.user_ids.push(current_user.id)
 		@pose.save
 		redirect_to @pose
 	end

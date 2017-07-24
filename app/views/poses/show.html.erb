@@ -3,7 +3,7 @@
 	<h1><%= @pose.name %></h1>
 		<%= link_to 'Back', poses_path %>
 		<% if user_signed_in? %>
-			<% if @pose.user_ids[0] == current_user.id %>
+			<% if @pose.user_ids[0].to_i == current_user.id %>
 				| <%= link_to 'Edit', edit_pose_path(@pose) %> |
 				<%= link_to 'Delete', @pose, method: :delete %>
 			<% end %>
