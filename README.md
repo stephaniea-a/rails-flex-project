@@ -1,42 +1,29 @@
 # Flex
 
-## Objective
+This is an yoga online platform which allows the user to sign in, upload and edit poses as well as leaving comments.
 
-To create a rails app with database relationships
+## Deployment instructions
 
-## How to Run
+1) Clone or download this repository from git@github.com:stephaniea-a/rails-flex-project.git
 
-1) Clone or download this repository from git@github.com:stephaniea-a/online_game.git
+2) Navigate to http://localhost:3000/poses
 
-2) Open index.html in the terminal to start the game
-
-## Demo Site
+3) Use rails s in the terminal to start the server
 
 
-
-## How to play
-
-Click on the squares to uncover the animals. Remember the position of the animals in order to make a pair and complete the game.
-
+## Ruby version
+ruby 2.4.1  
+Rails 5.1.2
 
 ## Technologies Used
-This game was created using HTML, CSS, Javascript and Jquery for DOM manipulation. Audio files and images have also been stored.
+This was created using Ruby on Rails, HTML/ERB. SCSS and bootstrap was used for styling and Ruby gems were used in order to upload images, provide user authentication and for styling.
 
 ## Future Modifications
 
-- Create a multi-level game with larger grid sizes, for example 5x5 grid.
-- Make the game more challenging: Show tiles when game begins and inform user to avoid clicking on the farmer. When the farmer is clicked on the tiles will be reshuffled and the user will have to start again.
+- Create categories for yoga poses to allow users to click on a category to view all the poses available
+- To be able to 'star' a pose in order to view all the poses user have selected as favorites.
+- To be able to view a users poses on the app
 
-
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
 
 * System dependencies
 
@@ -47,9 +34,3 @@ Things you may want to cover:
 * Database initialization
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
