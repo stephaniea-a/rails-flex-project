@@ -24,13 +24,3 @@ This was created using Ruby on Rails, HTML/ERB. SCSS and bootstrap was used for 
 - To be able to 'star' a pose in order to view all the poses user have selected as favorites.
 - To be able to view a users poses on the app
 
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
